@@ -10,24 +10,24 @@ A modern starter template for building React applications with **Vite**, preconf
 
 ## 🛠️ Setup Instructions
 
+###### Clone the repository
 ```bash
-# Clone the repository
 
 git clone https://github.com/Muhammed-Sahad-c/react_vite_starter_kit.git
 ```
 
+###### Navigate into the project
 ```bash
-# Navigate into the project
 
 cd react_vite_starter_kit
 ```
-```bash
-# Install dependencies
 
+###### Install dependencies
+```bash
 npm install
 ```
-```bash
-# Start the development server
 
+###### Start the development server
+```bash
 npm run dev
 ```
