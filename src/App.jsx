@@ -1,3 +1,8 @@
+
+// Styles
+
 import "./App.css";
 
-export const App = () => <>Hellow world</>;
+export const App = () => (
+  <h1 className="text-3xl font-bold underline">Hello world!</h1>
+);
