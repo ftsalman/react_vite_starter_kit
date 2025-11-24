@@ -1,14 +1,47 @@
-import { createBrowserRouter } from "react-router-dom";
-import { HomePage } from "../pages/HomePage";
-import { NotFoundPage } from "../pages/NotFoundPage";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import { AuthLayout } from "../layout/AuthLayout";
+import { LoginPage } from "../pages/LoginPage";
+import { DashboardLayout } from "../layout/DashboardLayout";
+import { DashboardPage } from "../pages/DashboardPage";
+import { EnquiryPage } from "../pages/EnquiryPage";
+
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <Navigate to="/auth/login" />,
   },
+
   {
-    path: "*",
-    element: <NotFoundPage />,
+    path: "/auth",
+    children: [
+      {
+        path: "login",
+        element: (
+          <AuthLayout>
+            <LoginPage />
+          </AuthLayout>
+        ),
+      },
+      {
+        path: "register",
+        element: <div></div>,
+      },
+    ],
+  },
+
+  {
+    path: "/",  
+    element: <DashboardLayout />,
+    children: [
+      {
+        index: true,
+        element: <DashboardPage />,
+      },
+      {
+        path:"/enquiry",
+        element: <EnquiryPage/>
+      },
+    ],
   },
 ]);
