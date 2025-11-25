@@ -21,7 +21,7 @@ export const EnquiryPage = () => {
   const TABLE_COLUMNS = [
     {
       id: "1",
-      head: "ID",
+      head: "#",
       key: "ID",
       isSortable: true,
       isFixed: false,
@@ -218,20 +218,7 @@ export const EnquiryPage = () => {
               <div className="flex-grow">
                 <PageSearchBar InputClassName="w-full max-w-[40rem]" />
               </div>{" "}
-              <Button
-                className="size-8 p-1 flex-shrink-0 text-gray-600"
-                variant="tertiary"
-                onClick={""}
-              >
-                <IconEdit />
-              </Button>
-              <Button
-                className="size-8 p-1 flex-shrink-0 border-0 text-red-400"
-                variant="danger-outlined"
-                onClick={""}
-              >
-                <IconBin size="14" />
-              </Button>
+            
               <Button
                 size="md"
                 variant="secondary"
@@ -269,7 +256,7 @@ export const EnquiryPage = () => {
               </Button>
             }
           />
-          <div className="overflow-y-auto no-scrollbar h-[calc(100vh-300px)]">
+          <div className="overflow-y-auto panel-scrollbar h-[calc(100vh-300px)]">
             <DataTableAlt
               columns={[...TABLE_COLUMNS, tableActionColumn]}
               data={enquiryData}

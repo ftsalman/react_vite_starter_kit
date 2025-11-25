@@ -28,7 +28,7 @@ const EmptyBlock = ({
   onSecodaryClick = () => {},
   // Img Props
   showImage = true,
-  imageSrc = "/svg/empty-data-svg.svg",
+  imageSrc = "/svgs/empty-data-svg.svg",
   imgClassName,
   // Icon Props
   showIcon = false,
@@ -42,8 +42,8 @@ const EmptyBlock = ({
 
    const {t} =  useTranslation();
 
-  const defaultTitle = t("emptyblocks.notfound");
-  const defaultSubtitle = t("emptyblocks.wecouldntfindwhatyourelookingfor");
+  const defaultTitle = "Not Found";
+  const defaultSubtitle ="We couldnt find what youre looking for";
 
 
 

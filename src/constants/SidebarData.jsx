@@ -46,6 +46,10 @@ export const SIDEBAR_DATA = [
         label: "Course Categories",
         path: "/master/coursecategories",
       },
+      {
+        label: "Course",
+        path: "/master/course",
+      },
     ],
   },
   {

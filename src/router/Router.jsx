@@ -5,6 +5,7 @@ import { DashboardLayout } from "../layout/DashboardLayout";
 import { DashboardPage } from "../pages/DashboardPage";
 import { EnquiryPage } from "../pages/EnquiryPage";
 import { CourseCategoriesPage } from "../pages/CourseCategoriesPage";
+import { CoursePage } from "../pages/CoursePage";
 
 export const router = createBrowserRouter([
   {
@@ -44,12 +45,16 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "master", // "/master"
+        path: "master", 
         children: [
           {
-            path: "coursecategories", // "/master/coursecategories"
+            path: "coursecategories", 
             element: <CourseCategoriesPage />,
           },
+          {
+            path:"course",
+            element:<CoursePage/>
+          }
         ],
       },
     ],
