@@ -9,11 +9,13 @@ import { CoursePage } from "../pages/CoursePage";
 import { ReportsPage } from "../pages/ReportsPage";
 
 export const router = createBrowserRouter([
+ 
   {
     path: "/",
     element: <Navigate to="/auth/login" />,
   },
 
+  // AUTH ROUTES
   {
     path: "/auth",
     children: [
@@ -33,39 +35,37 @@ export const router = createBrowserRouter([
   },
 
   {
-    path: "/",
+    path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       {
         index: true,
         element: <DashboardPage />,
       },
+
       {
-        path: "/enquiry",
+        path: "enquiry",
         element: <EnquiryPage />,
       },
 
       {
-        path: "master", 
+        path: "master",
         children: [
           {
-            path: "coursecategories", 
+            path: "coursecategories",
             element: <CourseCategoriesPage />,
           },
           {
-            path:"course",
-            element:<CoursePage/>
-          }
+            path: "course",
+            element: <CoursePage />,
+          },
         ],
       },
-      {
-        path:"/reports",
-        element:<ReportsPage/>
-      }
-      
-    ],
 
-    
+      {
+        path: "reports",
+        element: <ReportsPage />,
+      },
+    ],
   },
- 
 ]);

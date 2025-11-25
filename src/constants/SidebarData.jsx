@@ -14,53 +14,53 @@ import {
 export const SIDEBAR_DATA = [
   {
     label: "Dashboard",
-    path: "/",
+    path: "/dashboard",
     icon: <IconDashboard size="20" />,
     hasSubMenu: false,
   },
   {
     label: "Enquiry",
-    path: "/enquiry",
+    path: "/dashboard/enquiry",
     icon: <IconGraphBar size="20" />,
     hasSubMenu: false,
   },
   {
     label: "Admission",
-    path: "/admission",
+    path: "/dashboard/admission", // (Create this page later if needed)
     icon: <IconBookOpen size="20" />,
     hasSubMenu: false,
   },
   {
     label: "Payments",
-    path: "/payments",
+    path: "/dashboard/payments", // (Create this page later)
     icon: <IconWallet size="20" />,
     hasSubMenu: false,
   },
   {
     label: "Master",
-    path: "/master",
+    path: "/dashboard/master",
     icon: <Iconsheld size="20" />,
     hasSubMenu: true,
     subMenu: [
       {
         label: "Course Categories",
-        path: "/master/coursecategories",
+        path: "/dashboard/master/coursecategories",
       },
       {
         label: "Course",
-        path: "/master/course",
+        path: "/dashboard/master/course",
       },
     ],
   },
   {
     label: "Reports",
-    path: "/reports",
+    path: "/dashboard/reports",
     icon: <IconCalendar size="20" />,
     hasSubMenu: false,
   },
   {
     label: "Settings",
-    path: "/settings",
+    path: "/dashboard/settings",
     icon: <IconSettings size="20" />,
     hasSubMenu: false,
   },
