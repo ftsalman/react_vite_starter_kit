@@ -26,16 +26,20 @@ export const SidebarNavList = ({
               path={path}
               label={label}
               icon={icon}
+              subMenu={subMenu} // Added missing prop
+              menuList={subMenu} // For the expanded/collapsed menu components
+              showMenu={currMenu === path} // Control menu visibility
               onClick={(e) => onGroupClick?.(e, path)}
+              onCloseMenu={onCloseMenu}
             />
           );
         }
 
         return (
           <SidebarNavItem
-            key={id}
+            key={id || index}
             {...menuProps}
-            onClick={() => closeSidebar()}
+            onClick={onCloseMenu} // Use the passed function directly
           />
         );
       })}

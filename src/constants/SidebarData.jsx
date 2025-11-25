@@ -4,6 +4,7 @@ import {
   Iconsheld,
   IconWallet,
 } from "../assets/icons/InterfaceIcons";
+
 import {
   IconCalendar,
   IconDashboard,
@@ -14,53 +15,49 @@ export const SIDEBAR_DATA = [
   {
     label: "Dashboard",
     path: "/",
-    tooltip: "Go to Dashboard",
-    icon: <IconDashboard color="#ffff" />,
+    icon: <IconDashboard size="20" />,
+    hasSubMenu: false,
   },
   {
     label: "Enquiry",
     path: "/enquiry",
-    tooltip: "Go to Enquiry",
     icon: <IconGraphBar size="20" />,
+    hasSubMenu: false,
   },
   {
     label: "Admission",
-    path: "",
-    tooltip: "Go to Enquiry",
+    path: "/admission",
     icon: <IconBookOpen size="20" />,
+    hasSubMenu: false,
   },
   {
     label: "Payments",
-    path: "",
-    tooltip: "Go to Enquiry",
+    path: "/payments",
     icon: <IconWallet size="20" />,
+    hasSubMenu: false,
   },
   {
     label: "Master",
     path: "/master",
-    tooltip: "Go to Enquiry",
     icon: <Iconsheld size="20" />,
     hasSubMenu: true,
     subMenu: [
       {
-        path: "course-categories",
-        label:"Course Categories",
-        element:(
-          ''
-        )
+        label: "Course Categories",
+        path: "/master/coursecategories",
       },
     ],
   },
   {
     label: "Reports",
-    path: "",
-    tooltip: "Go to Enquiry",
+    path: "/reports",
     icon: <IconCalendar size="20" />,
+    hasSubMenu: false,
   },
   {
     label: "Settings",
-    path: "",
-    tooltip: "Go to Enquiry",
+    path: "/settings",
     icon: <IconSettings size="20" />,
+    hasSubMenu: false,
   },
 ];

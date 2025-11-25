@@ -3,6 +3,8 @@ import { PageContainer } from "../components/ui/PageContainer";
 import { PageToolbarGroup } from "../components/page-toolbar/PageToolbarGroup";
 import { Button } from "../components/ui/button/Button";
 import {
+  IconBin,
+  IconEdit,
   IconMoreVertical,
   IconPlus,
   IconSort,
@@ -215,8 +217,21 @@ export const EnquiryPage = () => {
             <div key="toolbar" className="flex items-center gap-3 w-full">
               <div className="flex-grow">
                 <PageSearchBar InputClassName="w-full max-w-[40rem]" />
-              </div>
-
+              </div>{" "}
+              <Button
+                className="size-8 p-1 flex-shrink-0 text-gray-600"
+                variant="tertiary"
+                onClick={""}
+              >
+                <IconEdit />
+              </Button>
+              <Button
+                className="size-8 p-1 flex-shrink-0 border-0 text-red-400"
+                variant="danger-outlined"
+                onClick={""}
+              >
+                <IconBin size="14" />
+              </Button>
               <Button
                 size="md"
                 variant="secondary"
@@ -226,7 +241,6 @@ export const EnquiryPage = () => {
                 <IconSort />
                 Filter
               </Button>
-
               <Button
                 size="md"
                 variant="secondary"
@@ -268,7 +282,14 @@ export const EnquiryPage = () => {
         </div>
       </PageContainer>
 
-      {isCreateDrawerOpen && <NewEnquiryDrawer />}
+      {isCreateDrawerOpen &&
+       <NewEnquiryDrawer
+       isOpen={isCreateDrawerOpen}
+       onClose={() => setIsCreateDrawerOpen(false)}
+       
+       />
+       
+       }
     </>
   );
 };

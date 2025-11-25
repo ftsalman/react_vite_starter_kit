@@ -16,32 +16,47 @@ export const Sidebar = () => {
   const { isOpen, isExpanded, onCollapse, onToggle, closeSidebar } =
     useSidebar();
 
+  // Handle submenu group clicks
+  const handleGroupClick = (e, path) => {
+    e.preventDefault();
+    setCurrMenu(currMenu === path ? null : path);
+  };
+
+  // Handle closing sidebar (for mobile)
+  const handleCloseMenu = () => {
+    closeSidebar?.();
+    setCurrMenu(null);
+  };
+
   return (
     <>
       <SidebarWrapper>
         <SidebarToggleBtn />
         <SidebarBodyWrapper hasScrollable={!isExpanded && currMenu}>
-        
           <SidebarContentWrapper>
-            <SidebarNavList sidebarData={SIDEBAR_DATA} />
+            <SidebarNavList 
+              sidebarData={SIDEBAR_DATA}
+              onGroupClick={handleGroupClick}
+              currMenu={currMenu}
+              onCloseMenu={handleCloseMenu}
+            />
           </SidebarContentWrapper>
         </SidebarBodyWrapper>
         <SidebarContentWrapper className=" sticky bottom-0 inset-0 z-[49] mt-auto gap-4 py-4 justify-end  border-gray-200 text-gray-400">
-           
-           <Button
-           variant="tertiary"
-           size="md"
-              className={`
+          <Button
+            variant="tertiary"
+            size="md"
+            className={`
               w-full flex justify-start rounded-md gap-2
                p-1 bg-white text-red-500
                duration-300
             `}
-           >
-          <IconLogout size="20"/>
-           {isExpanded && (
+          >
+            <IconLogout size="20"/>
+            {isExpanded && (
               <span className="whitespace-nowrap">Log Out</span>
             )}
-           </Button>
+          </Button>
         </SidebarContentWrapper>
       </SidebarWrapper>
     </>

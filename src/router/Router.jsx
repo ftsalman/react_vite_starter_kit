@@ -4,7 +4,7 @@ import { LoginPage } from "../pages/LoginPage";
 import { DashboardLayout } from "../layout/DashboardLayout";
 import { DashboardPage } from "../pages/DashboardPage";
 import { EnquiryPage } from "../pages/EnquiryPage";
-
+import { CourseCategoriesPage } from "../pages/CourseCategoriesPage";
 
 export const router = createBrowserRouter([
   {
@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
   },
 
   {
-    path: "/",  
+    path: "/",
     element: <DashboardLayout />,
     children: [
       {
@@ -39,8 +39,18 @@ export const router = createBrowserRouter([
         element: <DashboardPage />,
       },
       {
-        path:"/enquiry",
-        element: <EnquiryPage/>
+        path: "/enquiry",
+        element: <EnquiryPage />,
+      },
+
+      {
+        path: "master", // "/master"
+        children: [
+          {
+            path: "coursecategories", // "/master/coursecategories"
+            element: <CourseCategoriesPage />,
+          },
+        ],
       },
     ],
   },

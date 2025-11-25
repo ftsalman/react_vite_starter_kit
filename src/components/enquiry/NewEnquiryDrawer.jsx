@@ -54,7 +54,7 @@ export const NewEnquiryDrawer = ({
     <>
       <Drawer {...drawerProps} isOutsideClickable={false}>
         <Drawer.Header onClose={onClose}>
-          <DrawerHeader title="New Enquiry" />
+          <DrawerHeader title="New Enquiry"  />
         </Drawer.Header>
         <Drawer.Body className="p-0">
           <form
@@ -155,7 +155,7 @@ export const NewEnquiryDrawer = ({
   );
 };
 
-const SectionHeader = ({ head = "", children = null }) => {
+export const SectionHeader = ({ head = "", children = null }) => {
   const [isOpen, toggleOpen] = useToggle(true);
 
   return (

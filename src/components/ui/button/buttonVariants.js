@@ -16,9 +16,9 @@ export const buttonVariants = cva(
         tertiary:
           "bg-transparent text-gray-800 focus:ring-[3px] focus:ring-brand-secondary-100 focus:border-brand-secondary-600",
         danger:
-          "bg-red-500 text-white focus:ring-[3px] focus:ring-red-200 focus:border-red-600",
+          "bg-red-100 text-black focus:ring-[3px] focus:ring-red-100 focus:border-red-100",
         "danger-outlined":
-          "border-red-500 text-red-500 border focus:shadow-red-200 focus:ring-[3px] focus:ring-red-200",
+          "border-red-100 text-white border focus:shadow-red-100 focus:ring-[3px] focus:ring-red-100",
         success:
           "bg-green-500 text-white focus:ring-[3px] focus:ring-green-200 focus:border-green-600",
       },
