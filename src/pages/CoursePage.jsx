@@ -77,10 +77,10 @@ export const CoursePage = () => {
             variant="secondary"
             size="sm"
             className={`flex items-center gap-2 px-2 py-0.5 h-6 rounded-lg ${
-              //   isActive
-              //     ? "bg-green-100 text-green-700"
-              //     : "bg-red-100 text-red-600"
-              ""
+            //   isActive
+            //     ? "bg-green-100 text-green-700"
+            //     : "bg-red-100 text-red-600"
+            ""
             }`}
           >
             <span
@@ -137,50 +137,43 @@ export const CoursePage = () => {
     {
       ID: 1,
       COURSENAME: "Product Photography Techniques",
-      COUSRSE_IMG:
-        "https://i.pinimg.com/736x/6e/cd/05/6ecd05e38861082a329199dc42d6d602.jpg",
+      COUSRSE_IMG: "https://i.pinimg.com/736x/6e/cd/05/6ecd05e38861082a329199dc42d6d602.jpg",
       CATEGORY: "Photography",
       STATUS: "Active",
       DURATION: "52 Hrs",
       PRICE: "20,000",
       INSTALLMENT: "Available",
       SALEAPERSON: "Arshad",
-      PROFILE_IMG:
-        "https://i.pinimg.com/736x/80/d8/16/80d816821f556834492b89597d21e117.jpg",
+      PROFILE_IMG: "https://i.pinimg.com/736x/80/d8/16/80d816821f556834492b89597d21e117.jpg",
     },
     {
       ID: 2,
       COURSENAME: "Product Photography Techniques",
-      COUSRSE_IMG:
-        "https://i.pinimg.com/736x/6e/cd/05/6ecd05e38861082a329199dc42d6d602.jpg",
+      COUSRSE_IMG: "https://i.pinimg.com/736x/6e/cd/05/6ecd05e38861082a329199dc42d6d602.jpg",
       CATEGORY: "Web Development",
       STATUS: "In-Active",
       DURATION: "52 Hrs",
       PRICE: "20,000",
       INSTALLMENT: "Not Available",
       SALEAPERSON: "Arshad",
-      PROFILE_IMG:
-        "https://i.pinimg.com/736x/80/d8/16/80d816821f556834492b89597d21e117.jpg",
+      PROFILE_IMG: "https://i.pinimg.com/736x/80/d8/16/80d816821f556834492b89597d21e117.jpg",
     },
     {
       ID: 3,
       COURSENAME: "Product Photography Techniques",
-      COUSRSE_IMG:
-        "https://i.pinimg.com/736x/6e/cd/05/6ecd05e38861082a329199dc42d6d602.jpg",
+      COUSRSE_IMG: "https://i.pinimg.com/736x/6e/cd/05/6ecd05e38861082a329199dc42d6d602.jpg",
       CATEGORY: "Design",
       STATUS: "Active",
       DURATION: "52 Hrs",
       PRICE: "20,000",
       INSTALLMENT: "Not Available",
       SALEAPERSON: "Arshad",
-      PROFILE_IMG:
-        "https://i.pinimg.com/736x/80/d8/16/80d816821f556834492b89597d21e117.jpg",
+      PROFILE_IMG: "https://i.pinimg.com/736x/80/d8/16/80d816821f556834492b89597d21e117.jpg",
     },
     {
       ID: 3,
       COURSENAME: "Product Photography Techniques",
-      COUSRSE_IMG:
-        "https://i.pinimg.com/736x/6e/cd/05/6ecd05e38861082a329199dc42d6d602.jpg",
+      COUSRSE_IMG: "https://i.pinimg.com/736x/6e/cd/05/6ecd05e38861082a329199dc42d6d602.jpg",
       CATEGORY: "Design",
       STATUS: "Active",
       DURATION: "52 Hrs",
@@ -189,6 +182,8 @@ export const CoursePage = () => {
       SALEAPERSON: "Arshad",
       PROFILE_IMG: "https://i.pravatar.cc/100?img=33",
     },
+   
+
   ]);
   const [fetchStatus, setFetchStatus] = useState("loading");
   const [searchValue, setSearchValue] = useState("");

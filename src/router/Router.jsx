@@ -6,6 +6,7 @@ import { DashboardPage } from "../pages/DashboardPage";
 import { EnquiryPage } from "../pages/EnquiryPage";
 import { CourseCategoriesPage } from "../pages/CourseCategoriesPage";
 import { CoursePage } from "../pages/CoursePage";
+import { ReportsPage } from "../pages/ReportsPage";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +58,14 @@ export const router = createBrowserRouter([
           }
         ],
       },
+      {
+        path:"/reports",
+        element:<ReportsPage/>
+      }
+      
     ],
+
+    
   },
+ 
 ]);
