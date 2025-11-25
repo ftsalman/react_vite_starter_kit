@@ -26,13 +26,13 @@ export const SIDEBAR_DATA = [
   },
   {
     label: "Admission",
-    path: "/dashboard/admission", // (Create this page later if needed)
+    path: "/dashboard/admission", 
     icon: <IconBookOpen size="20" />,
     hasSubMenu: false,
   },
   {
     label: "Payments",
-    path: "/dashboard/payments", // (Create this page later)
+    path: "/dashboard/payments", 
     icon: <IconWallet size="20" />,
     hasSubMenu: false,
   },
