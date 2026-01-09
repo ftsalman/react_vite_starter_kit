@@ -8,6 +8,8 @@ import { Navfav } from "./Navfav";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { SCREEN_SIZES } from "../../utils/utils";
 import { useToggle } from "../../hooks/useToggle";
+import { IconSearch } from "../../assets/icons/interfaceIcons2";
+import { PageSearchBar } from "../ui/PageSearchBar";
 
 const NAV_LIST = [
   { id: 1, label: "Home", path: "/" },
@@ -23,19 +25,22 @@ export const Navbar = () => {
   const [isSearchExpanded, toggleSearch] = useToggle(false);
   const [searchValue, setSearchValue] = useState("");
   const { width: windowWidth } = useWindowSize();
-  
+
   return (
-    <nav className="w-full h-[3.75rem] px-2.5 md:px-8 py-3 flex items-center justify-between border-b border-gray-200 bg-white">
+    <nav className="w-full h-[3.80rem] px-2.5 md:px-8 py-3 flex items-center justify-between  rounded-3xl  border-gray-200 bg-white/50">
       {/* Logo */}
       <div className="flex items-center gap-2.5 flex-shrink-0">
-        <Link to="/" className="text-2xl font-extrabold whitespace-nowrap hover:opacity-80 transition-opacity">
+        <Link
+          to="/"
+          className="text-2xl font-extrabold whitespace-nowrap hover:opacity-80 transition-opacity"
+        >
           Flone.
         </Link>
       </div>
 
       {/* Navigation Links */}
       <div className="hidden md:flex items-center justify-center flex-grow mx-4">
-        <List
+        {/* <List
           uniqueKey="id"
           data={NAV_LIST}
           className="flex items-center justify-center gap-6 text-sm font-medium"
@@ -47,20 +52,14 @@ export const Navbar = () => {
               {item?.label}
             </Link>
           )}
-        />
+        /> */}
+
+       <PageSearchBar/>
       </div>
 
       {/* Right Actions */}
       <div className="flex items-center gap-2 flex-shrink-0">
         <div className="flex items-center gap-1">
-          <NavSearch
-            isSearchExpanded={
-              SCREEN_SIZES.lg < windowWidth ? isSearchExpanded : true
-            }
-            setIsSearchExpanded={toggleSearch}
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-          />
           <NavAvathar />
           <Navfav />
           <Navcart />

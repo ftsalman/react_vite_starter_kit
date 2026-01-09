@@ -7,6 +7,7 @@ export const Navfav = () => {
     <>
     <Button
     variant="tertiary"
+    className=" bg-white border-gray-200 rounded-full p-1 w-10 h-10 shadow"
 
     >
     <IconFav size="24"/>

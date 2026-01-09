@@ -1,7 +1,4 @@
-import PropTypes from "prop-types";
-import { useRef, useState } from "react";
-import { t } from "i18next";
-import { useClickOutside } from "../../../lib/turtle-ui/hooks";
+import React, { useRef } from "react";
 import { IconSearch } from "../../assets/icons/interfaceIcons2";
 
 const SEARCHBAR_STYLE = {
@@ -15,93 +12,30 @@ const PREFIX_CONTAINER_STYLE = {
 };
 
 export const PageSearchBar = ({
-  // isSearchExpanded = false,
-  // setIsSearchExpanded = () => {},
-  setSearchValue = "",
-  searchValue = () => {},
+  isSearchExpanded,
+  setIsSearchExpanded,
+  setSearchValue,
+  searchValue,
 }) => {
-  // const { t, i18n } = useTranslation();
-  // const isRtl = i18n.dir() === "rtl";
-  
-  const [isSearchExpanded, setIsSearchExpanded] = useState(false);
-
-  const buttonRef = useRef(null);
-  const inputRef = useRef(null);
-
-  const searchbarRef = useClickOutside(() => {
-    if (!searchValue) {
-      setIsSearchExpanded?.(false);
-    }
-  });
-
-  //expand searchbar and focus
-  const handleSearchExpand = () => {
-    setIsSearchExpanded?.(true);
-    setTimeout(() => {
-      inputRef?.current?.focus(); // Apply focus after the DOM updates
-    }, 0);
-  };
-
-  // const handleKeyPress = useCallback(
-  //   (event) => {
-  //     if (event.shiftKey && event.key === "S" && !isSearchExpanded) {
-  //       event.preventDefault();
-  //       buttonRef?.current?.click();
-  //     }
-  //   },
-  //   [isSearchExpanded]
-  // );
-
-  const handleKeyPressInSearchBar = (e) => {
-    if (e.key === "Escape" && searchValue !== "") {
-      e.preventDefault();
-    }
-
-    if (e.key === "Escape" && searchValue === "") {
-      setIsSearchExpanded(false);
-    }
-  };
-
-  // useEffect(() => {
-  //   document.addEventListener("keydown", handleKeyPress);
-
-  //   return () => {
-  //     document.removeEventListener("keydown", handleKeyPress);
-  //   };
-  // }, [handleKeyPress]);
-
   return (
-    <div className="relative" ref={searchbarRef}>
+    <div className="relative">
       <input
         type="search"
-        placeholder={t("placeholder.search")}
+        placeholder="Search"
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
-        className={`${SEARCHBAR_STYLE[isSearchExpanded]} ${
-          isSearchExpanded ? "pl-10" : ""
-        } h-10 outline-0 rounded-lg text-sm border shadow-sm focus:shadow-input-box-shadow disabled:bg-white transform duration-300 border-[#EFE9FF] text-gray-800`}
-        disabled={!isSearchExpanded}
-        ref={inputRef}
-        onKeyDown={handleKeyPressInSearchBar}
+        className={`h-12 w-[700px] pl-10 pr-4 rounded-3xl text-sm border bg-white shadow-sm focus:shadow-input-box-shadow border-[#EFE9FF] text-gray-800 placeholder-gray-400 outline-none transition-all duration-300`}
+        autoComplete="off"
       />
 
       <button
-        ref={buttonRef}
+        // ref={buttonRef}
         title="Search - Shift + S"
-        onClick={handleSearchExpand}
-        className={`${PREFIX_CONTAINER_STYLE[isSearchExpanded]} absolute left-0 inset-0 w-10 h-full rounded-md flex justify-center items-center outline-none transition-colors duration-300`}
+        // onClick={handleSearchExpand}
+        className={` absolute left-0 inset-0 w-10 h-full rounded-md flex justify-center items-center outline-none transition-colors duration-300`}
       >
-        <IconSearch size={isSearchExpanded ? 16 : 18} />
+        <IconSearch />
       </button>
     </div>
   );
 };
-
-PageSearchBar.propTypes = {
-  isSearchExpanded: PropTypes.bool,
-  setIsSearchExpanded: PropTypes.func,
-  setSearchValue: PropTypes.func.isRequired,
-  searchValue: PropTypes.string.isRequired,
-};
-
-PageSearchBar.displayName = "PageSearchbar";

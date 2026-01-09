@@ -4,12 +4,12 @@ import { IconSearch } from "../../assets/icons/interfaceIcons2";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import PropTypes from "prop-types";
 
-const SEARCHBAR_STYLE = {
+export const SEARCHBAR_STYLE = {
   true: "w-[200px] px-4 py-2 shadow-input-box-shadow",
   false: "w-10 placeholder:opacity-0 delay-150",
 };
 
-const PREFIX_CONTAINER_STYLE = {
+export const PREFIX_CONTAINER_STYLE = {
   true: "pointer-events-none focus:shadow-none text-gray-500",
   false: "pointer-events-auto focus:shadow-input-box-shadow text-gray-800",
 };

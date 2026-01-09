@@ -1065,21 +1065,22 @@ export const IconUpload = ({ size = "16", color = "currentColor" }) => (
   </svg>
 );
 
-export const IconFav = ({ size = "16" }) => {
+export const IconFav = ({ size = 16, className = "" }) => {
   return (
     <svg
       width={size}
       height={size}
       viewBox="0 0 32 32"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      fill="currentColor"
     >
       <path
         d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z"
-        stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -1101,6 +1102,22 @@ export const IconCart = ({ size = "16" }) => {
         stroke-linecap="round"
         stroke-linejoin="round"
       />
+    </svg>
+  );
+};
+
+export const IconArrowNorthEast = ({ size = "16" }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      enable-background="new 0 0 24 24"
+      height={size}
+      viewBox="0 0 24 24"
+      width={size}
+      fill="#000000"
+    >
+      <rect fill="none" height="24" width="24" />
+      <path d="M9,5v2h6.59L4,18.59L5.41,20L17,8.41V15h2V5H9z" />
     </svg>
   );
 };

@@ -1574,30 +1574,32 @@ export const IconMoreVertical = ({ size = "16" }) => {
 
 IconMoreVertical.propTypes = ICON_PROP_TYPES;
 
-export const IconStar = ({ size = "16", filled = false }) => {
-  if (filled) {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height={size}
-        viewBox="0 -960 960 960"
-        width={size}
-        fill="currentColor"
-      >
-        <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
-      </svg>
-    );
-  }
-
-  return (
+export const IconStar = ({ size = 16, filled = false, className = "" }) => {
+  return filled ? (
+    // ⭐ Filled Star
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      width={size}
       height={size}
       viewBox="0 -960 960 960"
-      width={size}
       fill="currentColor"
+      className={className}
     >
-      <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z" />
+      <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+    </svg>
+  ) : (
+    // ☆ Outline Star
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 -960 960 960"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="60"
+      className={className}
+    >
+      <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
     </svg>
   );
 };
@@ -2199,19 +2201,18 @@ IconMusicNote.propTypes = ICON_PROP_TYPES;
 export const IconArrowOutward = ({ size = "16", color = "currentColor" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 960 960"
-    width={size}
+    enable-background="new 0 0 24 24"
     height={size}
-    fill="none"
-    stroke={color}
-    strokeWidth="50"
+    viewBox="0 0 24 24"
+    width={size}
+    fill="#FFFF"
   >
-    <rect x="40" y="40" width="880" height="880" rx="80" ry="80" />
-    <path
-      d="M256 720l-56-56 384-384H240v-80h480v480h-80v-344L256 720Z"
-      fill={color}
-      strokeWidth="10"
-    />
+    <g>
+      <rect fill="none" height="24" width="24" />
+    </g>
+    <g>
+      <polygon points="6,6 6,8 14.59,8 5,17.59 6.41,19 16,9.41 16,18 18,18 18,6" />
+    </g>
   </svg>
 );
 

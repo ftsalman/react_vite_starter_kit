@@ -37,6 +37,7 @@ export const NavAvathar = () => {
 
         <Button
         variant="tertiary" 
+        className=" bg-white border-gray-200 rounded-full p-1 w-10 h-10 shadow"
         >
             <IconUser size="20"/>
         </Button>
