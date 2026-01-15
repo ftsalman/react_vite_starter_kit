@@ -6,6 +6,7 @@ import  cartReducer    from './reducers/cartReducer';
 import  notificationReducer  from  './reducers/notificationReducer';
 export const store = configureStore({
   reducer: {
+    sidebar: siderbarReducer,
     user: userReducer,
     network: networkReducer,
     products: productsReducer,

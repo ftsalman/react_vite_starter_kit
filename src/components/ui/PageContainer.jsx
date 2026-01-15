@@ -6,6 +6,7 @@ export const PageContainer = ({ className = "", children }) => {
      <div
       className={cn(
         "h-[calc(100dvh-60px)] p-4 flex flex-col gap-4",
+        "h-[calc(100dvh-60px)] p-4 flex flex-col gap-4 bg-[#F8FAFC]",
         className
       )}
     >

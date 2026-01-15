@@ -11,6 +11,7 @@ const Card = ({ className = "", onClick = undefined, children, ...rest }) => {
       onClick={onClick}
       className={cn(
         "p-4 rounded-2xl   duration-300  bg-white",
+        "p-4 rounded-lg shadow-lg shadow-gray-50 border border-gray-200  duration-300  bg-white",
         classess,
         className
       )}

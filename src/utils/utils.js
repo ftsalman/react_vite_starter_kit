@@ -1,10 +1,5 @@
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
-
-
-
-
-
 export const SCREEN_SIZES = {
   sm: 640,
   md: 768,
@@ -48,4 +43,11 @@ export const formatDateAndTime = (timestamp) => {
     .padStart(2, "0")}:${date.getSeconds().toString().padStart(2, "0")}`;
 
   return { date: formattedDate, time: formattedTime };
+};
+export const getMediaUrl = (url = "") => {
+  if (!url) return null;
+
+  if (url.startsWith("/")) return import.meta.env.VITE_BASE_URL + url;
+
+  return import.meta.env.VITE_BASE_URL + "/" + url + " ";
 };

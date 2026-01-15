@@ -5,6 +5,7 @@ import { MainLayout } from "../layout/MainLayout";
 import { ProductsPage } from "../pages/ProductsPage";
 
 export const router = createBrowserRouter([
+ 
   {
     path: "/",
     element: (
