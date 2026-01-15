@@ -49,3 +49,25 @@
 .animate-fade {
   animation: fade 0.6s ease-in-out;
 }
+
+
+.tui-tab {
+  display: flex;
+  gap: 12px;   /* 👈 control spacing here */
+  overflow-x: auto;
+}
+
+.tui-tab-item {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.tui-tab-item-active {
+  background: black;
+  color: white;
+}

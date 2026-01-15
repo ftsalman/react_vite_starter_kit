@@ -8,9 +8,10 @@ import {
   IconStar,
   IconWhatsApp,
 } from "../assets/icons/interfaceIcons2";
-import { Button } from "../components/ui/button/Button";
-import { List } from "../components/ui/List";
 import { IconArrowNorthEast, IconFav } from "../assets/icons/InterfaceIcons";
+import { Button } from "../../lib/turtle-ui/components/button/Button";
+import { DataList } from "../../lib/turtle-ui/components/list/DataList";
+import { Link } from "react-router-dom";
 
 const MORE_PRODUCTS = [
   {
@@ -20,7 +21,7 @@ const MORE_PRODUCTS = [
     Product: [
       {
         id: 1,
-        img: "https://i.pinimg.com/1200x/cb/9f/f7/cb9ff742dc70427fac1449e3b9a7fc78.jpg",
+        img: "https://i.pinimg.com/1200x/0c/d8/bb/0cd8bb100504d9bad6a694d1420709e7.jpg",
       },
       {
         id: 2,
@@ -76,14 +77,14 @@ export const HomePage = () => {
   };
 
   useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentSlide((prev) =>
-      prev === PRODUCT_SLIDES.length - 1 ? 0 : prev + 1
-    );
-  }, 4000); // change slide every 4 seconds
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) =>
+        prev === PRODUCT_SLIDES.length - 1 ? 0 : prev + 1
+      );
+    }, 4000); // change slide every 4 seconds
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -125,19 +126,21 @@ export const HomePage = () => {
                   </div>
 
                   {/* Button */}
-                  <Button
-                    variant="secondary"
-                    className="flex items-center gap-3 bg-lime-300 hover:bg-lime-400 transition px-6 py-3 rounded-full font-semibold w-fit"
-                  >
-                    View All Products
-                    <span className="p-2 bg-black rounded-full hover:scale-105 transition-all duration-500">
-                      <img
-                        src="/svgs/redirect_icon.svg"
-                        alt=""
-                        className="  w-5"
-                      />
-                    </span>
-                  </Button>
+                  <Link to="products">
+                    <Button
+                      variant="secondary"
+                      className="flex items-center gap-3 bg-lime-300 hover:bg-lime-400 transition px-6 py-3 rounded-full font-semibold w-fit"
+                    >
+                      View All Products
+                      <span className="p-2 bg-black rounded-full hover:scale-105 transition-all duration-500">
+                        <img
+                          src="/svgs/redirect_icon.svg"
+                          alt=""
+                          className="  w-5"
+                        />
+                      </span>
+                    </Button>
+                  </Link>
 
                   {/* Social Icons */}
                   <div className="flex gap-2 pt-4 text-gray-500">
@@ -197,11 +200,11 @@ export const HomePage = () => {
 
             <div className=" grid grid-cols-1 md:grid-cols-3 gap-2 ">
               <CardContainer className="col-start-1 min-h-20 rounded-3xl">
-                <List
+                <DataList
                   data={MORE_PRODUCTS}
                   className=" flex flex-col "
                   render={(item) => (
-                    <div className="space-y-4 relative">
+                    <div key={item?.id} className="space-y-4 relative">
                       <div>
                         <h4 className="font-semibold">{item.title}</h4>
                         <p className="text-sm text-gray-500">{item.descp}</p>
